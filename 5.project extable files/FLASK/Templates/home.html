@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Flight Delay Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div id="background"></div>
+    <div id="container">
+        <h1 id="head">FLIGHT DELAY PREDICTION</h1>
+        <p>The objective of flight delay prediction is to accurately forecast 
+        whether a flight will experience delays, allowing stakeholders such as airlines, airports, 
+        passengers, and air traffic controllers to make informed decisions.</p>
+    </div>
+
+    <div id="buttons">
+        <a href="{{ url_for('predict') }}"><button type="button">PREDICT</button></a>
+    </div>
+</body>
+</html>

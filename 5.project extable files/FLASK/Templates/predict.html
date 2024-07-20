@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict - FDP</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div id="background"></div>
+    <div id="container">
+        <h1 id="head">Prediction</h1>
+        <div class="col-md-7 col-md-offset-1">
+            <div class="booking-form">
+                <form action="{{ url_for('predict') }}" method="post">
+                    <div>
+                        <label>Flight Number:</label>
+                        <input type="text" name="flightnumber" required>
+                    </div>
+                    <div>
+                        <label>Month:</label>
+                        <input type="text" name="MONTH" required>
+                    </div>
+                    <div>
+                        <label>Day of Month:</label>
+                        <input type="text" name="DAY_OF_MONTH" required>
+                    </div>
+                    <div>
+                        <label>Day of Week:</label>
+                        <input type="text" name="DAY_OF_WEEK" required>
+                    </div>
+                    <div>
+                        <label>Origin:</label>
+                        <select name="carrier" required>
+                            <option value="ATL">Atlanta International Airport (ATL)</option>
+                            <option value="DTW">Detroit Metropolitan Wayne (DTW)</option>
+                            <option value="SEA">Seattle-Tacoma International Airport (SEA)</option>
+                            <option value="MSP">Minneapolis Saint Paul (MSP)</option>
+                            <option value="JFK">John F. Kennedy International Airport (JFK)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>Destination:</label>
+                        <select name="dest" required>
+                            <option value="SEA">Seattle-Tacoma International Airport (SEA)</option>
+                            <option value="MSP">Minneapolis Saint Paul (MSP)</option>
+                            <option value="DTW">Detroit Metropolitan Wayne (DTW)</option>
+                            <option value="ATL">Atlanta International Airport (ATL)</option>
+                            <option value="JFK">John F. Kennedy International Airport (JFK)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>Scheduled Departure Time:</label>
+                        <input type="text" name="DEP_DEL15" required>
+                    </div>
+                    <div>
+                        <label>Scheduled Arrival Time:</label>
+                        <input type="text" name="CRS_ARR_TIME" required>
+                    </div>
+                    <div>
+                        <label>Actual Arrival Time:</label>
+                        <input type="text" name="ARR_DEL15" required>
+                    </div>
+                    <div>
+                        <button type="submit">Predict</button>
+                    </div>
+                </form>
+                {% if showcase %}
+                    <h2>{{ showcase }}</h2>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
